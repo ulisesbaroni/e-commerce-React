@@ -1,0 +1,68 @@
+.navbar {
+  background-color: var(--color-tierra);
+  box-shadow: var(--shadow-navbar);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  height: 56px;
+  width: 56px;
+  object-fit: contain;
+  /* el círculo azul del logo se integra bien sobre el fondo tierra */
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.25));
+  transition: transform 0.2s ease;
+}
+
+.navbar__logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.navbar__links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  margin-left: 8px;
+  list-style: none;
+}
+
+.navbar__link {
+  display: block;
+  padding: 6px 14px;
+  color: var(--color-crema-oscura);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-base);
+  text-decoration: none;
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--color-crema);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* CartWidget alineado a la derecha */
+.navbar__inner > :last-child {
+  margin-left: auto;
+}

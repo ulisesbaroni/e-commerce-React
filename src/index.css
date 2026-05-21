@@ -1,0 +1,50 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --color-tierra: #5c3d1e;
+  --color-tierra-claro: #8b5e3c;
+  --color-crema: #f5efe6;
+  --color-crema-oscura: #e8ddd0;
+  --color-texto: #2c1a0e;
+  --color-texto-suave: #6b4c35;
+  --color-acento: #a0522d;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+
+  --shadow-suave: 0 2px 12px rgba(92, 61, 30, 0.12);
+  --shadow-navbar: 0 2px 8px rgba(92, 61, 30, 0.15);
+
+  --radius-base: 6px;
+  --transition-base: 0.2s ease;
+}
+
+/* ===== RESET BÁSICO ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-crema);
+  color: var(--color-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
