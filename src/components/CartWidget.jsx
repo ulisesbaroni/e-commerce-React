@@ -1,6 +1,6 @@
 import './CartWidget.css'
 
-// Por ahora la cantidad es estática, en futuras etapas vendrá del contexto
+// Por ahora la cantidad la pongo estática, en próximas entregas será con contexto
 const CartWidget = () => {
   const cantidad = 3
 

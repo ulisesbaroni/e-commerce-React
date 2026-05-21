@@ -1,6 +1,5 @@
 import './ItemListContainer.css'
 
-// greeting viene de App.jsx — en etapas futuras esto mostrará los productos
 const ItemListContainer = ({ greeting }) => {
   return (
     <section className="item-list-container">

@@ -27,7 +27,6 @@
   height: 56px;
   width: 56px;
   object-fit: contain;
-  /* el círculo azul del logo se integra bien sobre el fondo tierra */
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.25));
   transition: transform 0.2s ease;
 }
@@ -65,4 +64,49 @@
 /* CartWidget alineado a la derecha */
 .navbar__inner > :last-child {
   margin-left: auto;
+}
+
+/* Dropdown */
+.navbar__item-dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.navbar__link--dropdown {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar__flecha {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.navbar__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background-color: var(--color-tierra-claro);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-suave);
+  min-width: 180px;
+  list-style: none;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.navbar__dropdown-link {
+  display: block;
+  padding: 10px 16px;
+  color: var(--color-crema);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.navbar__dropdown-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
 }
