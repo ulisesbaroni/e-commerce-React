@@ -1,0 +1,64 @@
+.item-count {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-count__controles {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--color-crema-oscura);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.item-count__btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  color: var(--color-tierra);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.item-count__btn:hover:not(:disabled) {
+  background-color: var(--color-crema-oscura);
+}
+
+.item-count__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.item-count__numero {
+  width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  border-left: 1.5px solid var(--color-crema-oscura);
+  border-right: 1.5px solid var(--color-crema-oscura);
+}
+
+.item-count__agregar {
+  width: 100%;
+  padding: 13px;
+  background-color: var(--color-tierra);
+  color: var(--color-crema);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.item-count__agregar:hover {
+  background-color: var(--color-tierra-claro);
+}

@@ -1,0 +1,141 @@
+const productos = [
+  // Lámparas
+  {
+    id: 'lampara-pie-tronco',
+    nombre: 'Lámpara de pie tronco',
+    categoria: 'lamparas',
+    precio: 85000,
+    descripcion: 'Lámpara de pie elaborada sobre tronco natural, lijado y barnizado a mano. Base estable con acabado rústico. Incluye cable textil y portalámparas E27.',
+    stock: 3,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Lámpara+tronco',
+  },
+  {
+    id: 'lampara-mesa-raiz',
+    nombre: 'Lámpara de mesa raíz',
+    categoria: 'lamparas',
+    precio: 62000,
+    descripcion: 'Elaborada a partir de una raíz seleccionada, cada pieza es única. Acabado natural con barniz al agua. Cable textil de 1.5m.',
+    stock: 2,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Lámpara+raíz',
+  },
+  {
+    id: 'lampara-colgante-rustica',
+    nombre: 'Lámpara colgante rústica',
+    categoria: 'lamparas',
+    precio: 54000,
+    descripcion: 'Lámpara colgante con base de madera maciza trabajada a torno. Ideal para espacios de comedor o ambientes cálidos.',
+    stock: 5,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Lámpara+colgante',
+  },
+  // Porta sahumerios
+  {
+    id: 'porta-sahumerios-barco',
+    nombre: 'Porta sahumerios barco',
+    categoria: 'porta-sahumerios',
+    precio: 12000,
+    descripcion: 'Porta sahumerios con forma de barco tallado en madera de algarrobo. Tiene canal para contener la ceniza y agujero para el sahumerio.',
+    stock: 8,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Porta+barco',
+  },
+  {
+    id: 'porta-sahumerios-luna',
+    nombre: 'Porta sahumerios luna',
+    categoria: 'porta-sahumerios',
+    precio: 14000,
+    descripcion: 'Diseño de luna creciente tallado a mano. Madera de quebracho con terminación en aceite de lino.',
+    stock: 6,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Porta+luna',
+  },
+  {
+    id: 'porta-sahumerios-arbol',
+    nombre: 'Porta sahumerios árbol',
+    categoria: 'porta-sahumerios',
+    precio: 15500,
+    descripcion: 'Porta sahumerios con silueta de árbol calado. Madera de pino patagonico con barniz mate.',
+    stock: 4,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Porta+árbol',
+  },
+  // Sahumadores
+  {
+    id: 'sahumador-cuenco',
+    nombre: 'Sahumador cuenco',
+    categoria: 'sahumadores',
+    precio: 18000,
+    descripcion: 'Cuenco torneado en madera de algarrobo. Apto para quemar resinas, hierbas o sahumerios en cono. Fondo de corcho incluido.',
+    stock: 7,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Sahumador+cuenco',
+  },
+  {
+    id: 'sahumador-plato-tallado',
+    nombre: 'Sahumador plato tallado',
+    categoria: 'sahumadores',
+    precio: 21000,
+    descripcion: 'Plato de madera con tallado artesanal de motivos naturales. Superficie tratada con aceite de lino. Ideal para sahumerios en barra.',
+    stock: 5,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Sahumador+plato',
+  },
+  {
+    id: 'sahumador-espiral',
+    nombre: 'Sahumador espiral',
+    categoria: 'sahumadores',
+    precio: 16000,
+    descripcion: 'Base circular con guía en espiral para sahumerios en cono o varilla. Torneado en madera de quebracho.',
+    stock: 9,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Sahumador+espiral',
+  },
+  // Percheros
+  {
+    id: 'perchero-rama',
+    nombre: 'Perchero rama',
+    categoria: 'percheros',
+    precio: 32000,
+    descripcion: 'Rama natural seleccionada, tratada y barnizada. Incluye soportes de pared. Cada pieza es única por la forma natural de la madera.',
+    stock: 4,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Perchero+rama',
+  },
+  {
+    id: 'perchero-pared-3-ganchos',
+    nombre: 'Perchero pared 3 ganchos',
+    categoria: 'percheros',
+    precio: 27000,
+    descripcion: 'Tabla de madera maciza con 3 ganchos de hierro forjado. Acabado en cera de abejas. Lista para colgar con tornillos incluidos.',
+    stock: 6,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Perchero+pared',
+  },
+  {
+    id: 'perchero-pie-tronco',
+    nombre: 'Perchero pie tronco',
+    categoria: 'percheros',
+    precio: 76000,
+    descripcion: 'Perchero de pie elaborado en tronco macizo con ramas naturales como ganchos. Pieza imponente para entrada o dormitorio.',
+    stock: 2,
+    imagen: 'https://placehold.co/400x400/e8ddd0/5c3d1e?text=Perchero+pie',
+  },
+]
+
+const RETARDO = 800
+
+export const getProductos = (categoria) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      if (categoria) {
+        resolve(productos.filter(p => p.categoria === categoria))
+      } else {
+        resolve(productos)
+      }
+    }, RETARDO)
+  })
+}
+
+export const getProducto = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const producto = productos.find(p => p.id === id)
+      if (producto) {
+        resolve(producto)
+      } else {
+        reject(new Error('Producto no encontrado'))
+      }
+    }, RETARDO)
+  })
+}
