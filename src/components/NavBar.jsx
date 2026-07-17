@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronRight } from 'lucide-react'
+import { useCart } from '../context/CartContext'
 import logo from '../assets/logo-sendero-mistico.png'
 import './NavBar.css'
 
@@ -15,7 +16,7 @@ const NavBar = () => {
   const [drawerAbierto, setDrawerAbierto] = useState(false)
   const [productosAbierto, setProductosAbierto] = useState(false)
   const [dropdownAbierto, setDropdownAbierto] = useState(false)
-  const cantidad = 3
+  const { cantidadTotal } = useCart()
 
   const cerrarDrawer = () => {
     setDrawerAbierto(false)
@@ -64,12 +65,12 @@ const NavBar = () => {
 
           {/* Iconos derecha */}
           <div className="navbar__acciones">
-            <button className="navbar__accion-btn" aria-label="Ver carrito">
+            <Link to="/carrito" className="navbar__accion-btn" aria-label="Ver carrito" onClick={cerrarDrawer}>
               <div className="cart-widget__contenedor">
                 <ShoppingBag size={22} strokeWidth={1.5} color="var(--color-crema)" />
-                {cantidad > 0 && <span className="cart-widget__badge">{cantidad}</span>}
+                {cantidadTotal > 0 && <span className="cart-widget__badge">{cantidadTotal}</span>}
               </div>
-            </button>
+            </Link>
 
             {/* Hamburguesa — solo mobile */}
             <button
