@@ -1,8 +1,15 @@
+import { useState } from 'react'
 import ItemCount from './ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = ({ producto, onAgregar }) => {
+  const [agregado, setAgregado] = useState(false)
   const { nombre, categoria, precio, descripcion, imagen, stock } = producto
+
+  const handleAgregar = (cantidad) => {
+    onAgregar(cantidad)
+    setAgregado(true)
+  }
 
   return (
     <div className="item-detail">
@@ -17,7 +24,11 @@ const ItemDetail = ({ producto, onAgregar }) => {
         <p className="item-detail__descripcion">{descripcion}</p>
         <p className="item-detail__stock">Stock disponible: {stock} unidades</p>
 
-        <ItemCount stock={stock} onAgregar={onAgregar} />
+        {agregado ? (
+          <p className="item-detail__confirmacion">✓ Producto agregado al carrito</p>
+        ) : (
+          <ItemCount stock={stock} onAgregar={handleAgregar} />
+        )}
       </div>
     </div>
   )

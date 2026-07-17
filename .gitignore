@@ -15,3 +15,6 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# Contexto de trabajo con Claude (no se sube al repo)
+CLAUDE.md

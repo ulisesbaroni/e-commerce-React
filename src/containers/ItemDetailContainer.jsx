@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProducto } from '../services/productos'
+import { useCart } from '../context/CartContext'
 import ItemDetail from '../components/ItemDetail'
 import NotFound from '../components/NotFound'
 import './ItemDetailContainer.css'
@@ -10,6 +11,7 @@ const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState(false)
   const { itemId } = useParams()
+  const { agregarAlCarrito } = useCart()
 
   useEffect(() => {
     setCargando(true)
@@ -21,8 +23,7 @@ const ItemDetailContainer = () => {
   }, [itemId])
 
   const handleAgregar = (cantidad) => {
-    // Por ahora solo lo loguea — en la Etapa 3 conecta con el contexto del carrito
-    console.log(`Agregado: ${cantidad} x ${producto.nombre}`)
+    agregarAlCarrito(producto, cantidad)
   }
 
   if (cargando) return <p className="detail-container__loading">Cargando producto...</p>

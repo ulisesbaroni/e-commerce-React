@@ -56,6 +56,12 @@
   margin-bottom: 24px;
 }
 
+.item-detail__confirmacion {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-tierra);
+}
+
 @media (min-width: 768px) {
   .item-detail {
     display: grid;

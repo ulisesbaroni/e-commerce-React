@@ -62,3 +62,9 @@
 .item-count__agregar:hover {
   background-color: var(--color-tierra-claro);
 }
+
+.item-count__sin-stock {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-acento);
+}

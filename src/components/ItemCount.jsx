@@ -7,6 +7,10 @@ const ItemCount = ({ stock, onAgregar }) => {
   const restar = () => setCantidad(c => Math.max(1, c - 1))
   const sumar = () => setCantidad(c => Math.min(stock, c + 1))
 
+  if (stock === 0) {
+    return <p className="item-count__sin-stock">Sin stock disponible</p>
+  }
+
   return (
     <div className="item-count">
       <div className="item-count__controles">
