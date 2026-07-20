@@ -7,24 +7,27 @@
 }
 
 .navbar__inner {
-  padding: 0 16px;
-  height: 64px;
-  display: flex;
+  padding: 10px 16px 6px;
+}
+
+/* Fila superior: hamburguesa — logo — carrito (mobile) */
+.navbar__fila-superior {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Logo */
 .navbar__logo {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .navbar__logo-img {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.2));
+  filter: brightness(0) invert(1) drop-shadow(0 1px 3px rgba(0,0,0,0.25));
   transition: transform 0.2s ease;
 }
 
@@ -32,13 +35,17 @@
   transform: scale(1.05);
 }
 
+/* Fila inferior: links + carrito — solo desktop */
+.navbar__fila-links {
+  display: none;
+}
+
 /* Links desktop — ocultos en mobile */
 .navbar__links {
   display: none;
   list-style: none;
+  align-items: center;
   gap: 4px;
-  flex: 1;
-  margin-left: 24px;
 }
 
 .navbar__link {
@@ -121,13 +128,7 @@
   font-weight: 700;
 }
 
-/* Iconos derecha */
-.navbar__acciones {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
+/* Iconos */
 .navbar__accion-btn {
   display: flex;
   align-items: center;
@@ -171,6 +172,17 @@
 /* Hamburguesa — solo mobile */
 .navbar__hamburguesa {
   display: flex;
+  justify-self: start;
+}
+
+/* Carrito en la fila superior — solo mobile */
+.navbar__carrito-mobile {
+  justify-self: end;
+}
+
+/* Carrito en la fila de links — solo desktop */
+.navbar__carrito-desktop {
+  display: none;
 }
 
 /* Overlay */
@@ -281,15 +293,36 @@
   .navbar__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 24px 24px 14px;
+  }
+
+  .navbar__fila-superior {
+    display: block;
+  }
+
+  .navbar__logo-img {
+    height: 84px;
+  }
+
+  .navbar__hamburguesa,
+  .navbar__carrito-mobile {
+    display: none;
+  }
+
+  .navbar__fila-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 14px;
   }
 
   .navbar__links {
     display: flex;
   }
 
-  .navbar__hamburguesa {
-    display: none;
+  .navbar__carrito-desktop {
+    display: flex;
   }
 
   .navbar__drawer,

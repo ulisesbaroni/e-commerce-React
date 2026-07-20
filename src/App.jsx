@@ -6,6 +6,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer'
 import CartContainer from './containers/CartContainer'
 import CheckoutContainer from './containers/CheckoutContainer'
 import NotFound from './components/NotFound'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   )
