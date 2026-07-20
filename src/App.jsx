@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './containers/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import CartContainer from './containers/CartContainer'
+import CheckoutContainer from './containers/CheckoutContainer'
 import NotFound from './components/NotFound'
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
             <Route path="/item/:itemId" element={<ItemDetailContainer />} />
             <Route path="/carrito" element={<CartContainer />} />
+            <Route path="/checkout" element={<CheckoutContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

@@ -26,6 +26,8 @@ const Cart = ({ carrito, precioTotal, onQuitar, onVaciar }) => {
           Total <span>${precioTotal.toLocaleString('es-AR')}</span>
         </p>
       </div>
+
+      <Link to="/checkout" className="cart__finalizar">Finalizar compra</Link>
     </div>
   )
 }

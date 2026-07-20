@@ -67,3 +67,20 @@
   font-size: 1.4rem;
   color: var(--color-tierra);
 }
+
+.cart__finalizar {
+  display: block;
+  margin-top: 16px;
+  padding: 14px;
+  background-color: var(--color-tierra);
+  color: var(--color-crema);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  border-radius: var(--radius-base);
+  text-decoration: none;
+}
+
+.cart__finalizar:hover {
+  background-color: var(--color-tierra-claro);
+}
