@@ -3,7 +3,8 @@ import { ShoppingBag } from 'lucide-react'
 import './ItemCard.css'
 
 const ItemCard = ({ producto }) => {
-  const { id, nombre, precio, imagen } = producto
+  const { id, nombre, precio, imagen, stock } = producto
+  const sinStock = stock === 0
 
   return (
     <article className="item-card">
@@ -11,9 +12,13 @@ const ItemCard = ({ producto }) => {
 
         <div className="item-card__imagen-wrapper">
           <img src={imagen} alt={nombre} className="item-card__imagen" />
-          <div className="item-card__carrito-btn" aria-label="Agregar al carrito">
-            <ShoppingBag size={18} strokeWidth={1.5} color="var(--color-crema)" />
-          </div>
+          {sinStock ? (
+            <span className="item-card__sin-stock">Sin stock</span>
+          ) : (
+            <div className="item-card__carrito-btn" aria-label="Agregar al carrito">
+              <ShoppingBag size={18} strokeWidth={1.5} color="var(--color-crema)" />
+            </div>
+          )}
         </div>
 
         <div className="item-card__info">

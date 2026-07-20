@@ -4,7 +4,7 @@ import { getProducto } from '../services/productos'
 import { useCart } from '../context/CartContext'
 import ItemDetail from '../components/ItemDetail'
 import NotFound from '../components/NotFound'
-import './ItemDetailContainer.css'
+import Loader from '../components/Loader'
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState(null)
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
     agregarAlCarrito(producto, cantidad)
   }
 
-  if (cargando) return <p className="detail-container__loading">Cargando producto...</p>
+  if (cargando) return <Loader texto="Cargando producto..." />
   if (error) return <NotFound />
 
   return <ItemDetail producto={producto} onAgregar={handleAgregar} />

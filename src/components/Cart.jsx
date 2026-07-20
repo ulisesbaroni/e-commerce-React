@@ -6,6 +6,7 @@ const Cart = ({ carrito, precioTotal, onQuitar, onVaciar }) => {
   if (carrito.length === 0) {
     return (
       <div className="cart cart--vacio">
+        <h2 className="cart__titulo">Carrito de compras</h2>
         <p className="cart__vacio-texto">Tu carrito está vacío</p>
         <Link to="/" className="cart__seguir-comprando">Ver productos</Link>
       </div>
@@ -14,6 +15,8 @@ const Cart = ({ carrito, precioTotal, onQuitar, onVaciar }) => {
 
   return (
     <div className="cart">
+      <h2 className="cart__titulo">Carrito de compras</h2>
+
       <div className="cart__items">
         {carrito.map(item => (
           <CartItem key={item.id} item={item} onQuitar={onQuitar} />

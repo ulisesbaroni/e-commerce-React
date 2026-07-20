@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductos } from '../services/productos'
 import ItemList from '../components/ItemList'
-import './ItemListContainer.css'
 
 const categoriaLabel = {
   'lamparas': 'Lámparas',
@@ -25,22 +24,7 @@ const ItemListContainer = () => {
 
   const titulo = categoriaId ? categoriaLabel[categoriaId] : 'Todos los productos'
 
-  return (
-    <section>
-      <div className="list-container__header">
-        <h2 className="list-container__titulo">{titulo}</h2>
-        {!cargando && (
-          <p className="list-container__cantidad">{productos.length} productos</p>
-        )}
-      </div>
-
-      {cargando ? (
-        <p className="list-container__loading">Cargando productos...</p>
-      ) : (
-        <ItemList productos={productos} />
-      )}
-    </section>
-  )
+  return <ItemList productos={productos} titulo={titulo} cargando={cargando} />
 }
 
 export default ItemListContainer

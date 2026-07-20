@@ -57,6 +57,19 @@
   transform: translateY(0);
 }
 
+.item-card__sin-stock {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: var(--color-acento);
+  color: var(--color-crema);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border-radius: var(--radius-base);
+}
+
 /* Info inferior */
 .item-card__info {
   background-color: var(--color-tierra);

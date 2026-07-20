@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronRight } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import logo from '../assets/logo-sendero-mistico.png'
@@ -35,7 +35,11 @@ const NavBar = () => {
 
           {/* Links — solo desktop */}
           <ul className="navbar__links">
-            <li><Link to="/" className="navbar__link">Inicio</Link></li>
+            <li>
+              <NavLink to="/" end className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--activo' : ''}`}>
+                Inicio
+              </NavLink>
+            </li>
             <li
               className="navbar__item-dropdown"
               onMouseEnter={() => setDropdownAbierto(true)}
@@ -48,19 +52,18 @@ const NavBar = () => {
                 <ul className="navbar__dropdown">
                   {categorias.map(cat => (
                     <li key={cat.id}>
-                      <Link
+                      <NavLink
                         to={`/categoria/${cat.id}`}
-                        className="navbar__dropdown-link"
+                        className={({ isActive }) => `navbar__dropdown-link ${isActive ? 'navbar__dropdown-link--activo' : ''}`}
                         onClick={() => setDropdownAbierto(false)}
                       >
                         {cat.label}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
               )}
             </li>
-            <li><Link to="/contacto" className="navbar__link">Contacto</Link></li>
           </ul>
 
           {/* Iconos derecha */}
@@ -98,9 +101,14 @@ const NavBar = () => {
 
         <ul className="navbar__drawer-links">
           <li>
-            <Link to="/" className="navbar__drawer-link" onClick={cerrarDrawer}>
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) => `navbar__drawer-link ${isActive ? 'navbar__drawer-link--activo' : ''}`}
+              onClick={cerrarDrawer}
+            >
               Inicio
-            </Link>
+            </NavLink>
           </li>
 
           <li>
@@ -119,23 +127,17 @@ const NavBar = () => {
               <ul className="navbar__drawer-categorias">
                 {categorias.map(cat => (
                   <li key={cat.id}>
-                    <Link
+                    <NavLink
                       to={`/categoria/${cat.id}`}
-                      className="navbar__drawer-categoria-link"
+                      className={({ isActive }) => `navbar__drawer-categoria-link ${isActive ? 'navbar__drawer-categoria-link--activo' : ''}`}
                       onClick={cerrarDrawer}
                     >
                       {cat.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             )}
-          </li>
-
-          <li>
-            <Link to="/contacto" className="navbar__drawer-link" onClick={cerrarDrawer}>
-              Contacto
-            </Link>
           </li>
         </ul>
       </div>
